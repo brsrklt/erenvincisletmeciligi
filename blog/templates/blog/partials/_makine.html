@@ -1,0 +1,23 @@
+
+{% load static %}
+
+
+<div class="col-3 card-container">
+  <div class="card">
+
+    
+    
+      <img class="card-image img-fluid" src="{{makine.image.url}}" alt="">    
+      
+      <div class="card-body">
+        <h2>                          
+            <b> {{makine.title|title}}  </b>            
+        </h2>
+
+        
+          <p style="margin-top: 10px;"> {{ makine.description|safe}}</p>
+             
+
+      </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'blog/css/makineler.css' %}"> 
+{% endblock css_files %}
+
+
+{% block title %} Makineler {% endblock title %}
+
+
+
+
+{% block content %}
+
+
+
+    <div class="hakkimizda-container">
+        <div class="row">
+    
+    
+{% for hakkimizda in hakkimizdas %}
+    
+            <div class="col-2 card-container">
+                
+                    
+                    <img class="img-fluid" src="{{hakkimizda.image.url}}" alt="">   
+
+                
+            </div>
+
+
+
+            <div class="col-2 card-container">
+                <div class="card" style="box-shadow: none;">
+                    
+                    
+                        
+                    <div class="card-body" >
+                        <h2>                                          
+                            <b> {{hakkimizda.title|title}}  </b>
+                            
+                        </h2>      
+
+                        <p style="margin-top: 10px; border: solid red 2px;"> {{ hakkimizda.content|safe}}</p>     
+                        <a href="{% url 'home' %}" class="btn btn-primary" style="margin-top: 15px;">
+                            İşlerimiz
+                        </a>  
+                        <p style="margin-top: 10px;"> {{ hakkimizda.mis_viz|safe}}</p>     
+
+                
+                    </div>
+                </div>
+            </div>
+
+            
+            
+{% endfor %}
+
+
+                
+    
+        </div>
+    </div>   
+
+
+
+
+{% endblock content %}
+
+
+{% block js_files %}
+
+    <script src="{% static 'blog/js/script.js' %}"></script>
+
+{% endblock js_files %}

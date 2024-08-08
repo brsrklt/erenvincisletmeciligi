@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Blog Details {% endblock title %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+    <div class="col-3 card-container detay">
+        <div class="card">
+            <img class="card-image img-fluid" src="{{blog.image.url}}" alt="">
+            <div class="card-body">
+              <h2>
+                                
+                <b> {{blog.title|title}}  </b>
+                  
+              </h2>
+      
+              <p style="margin-top: 10px;"> {{ blog.description|safe}}</p>
+      
+      
+            </div>
+        </div>
+      </div>
+
+
+
+{% endblock content %}

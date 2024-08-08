@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'blog/css/makineler.css' %}"> 
+{% endblock css_files %}
+
+{% block title %} Makineler {% endblock title %}
+
+{% block content %}
+
+    <h1 class="detay makine-baslik" > <b>İletişim</b> </h1>
+
+
+    <div class="hakkimizda-container">
+
+
+        <div class="row">    
+
+            <div style="margin-left: 20%; margin-bottom: 100px;">
+
+            
+            </div>
+
+            <div class="col-2 card-container">
+                <div class="card" style="box-shadow: none;">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12502.914744076937!2d42.1273142!3d38.4246345!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400d253104fd8ff1%3A0xaa5c4f9c8e042417!2zRVJFTiBWxLBOw4cgxLDFnkxFVE1FQ8SwTMSwxJ7EsA!5e0!3m2!1str!2str!4v1711804790608!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                
+
+                </div>
+            </div>  
+    
+{% for iletisim in iletisims %}   
+    <div class="col-2 card-container">
+        <div class="card" style="box-shadow: none;">
+                        
+            <div class="card-body" style="margin-bottom: 25px;">
+                <h4>                                          
+                    <a href="tel:5070482598">
+                        <i class="fa fa-phone" style="font-size:24px;color:blue;"></i> 
+                        <b style="color: blue;">{{iletisim.tel_1}}</b>   {{iletisim.Ad_1}}
+                    </a>
+                            
+                </h4>
+                <h4 style="margin-top: 20px;">                                          
+                    <a href="tel:5325409825">
+                        <i class="fa fa-phone" style="font-size:24px;color:blue;"></i> 
+                        <b style="color: blue;">{{iletisim.tel_2}}</b>   {{iletisim.Ad_2}}
+                    </a>
+                            
+                </h4>      
+
+                <p style="margin-top: 25px;"> <b>Adres:</b>  {{iletisim.adres}} </p>                            
+
+            </div>
+        </div>
+    </div>           
+            
+{% endfor %}      
+        </div>
+    </div>   
+
+
+
+{% endblock content %}
+
+
+{% block js_files %}
+
+    <script src="{% static 'blog/js/script.js' %}"></script>
+
+{% endblock js_files %}

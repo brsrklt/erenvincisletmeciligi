@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'blog/css/makineler.css' %}"> 
+{% endblock css_files %}
+
+
+{% block title %} Makineler {% endblock title %}
+
+
+
+
+{% block content %}
+
+<h1 class="detay makine-baslik"> <b>MAKİNELERİMİZ</b> </h1>
+
+<div class="makine">
+    <div class="row">
+
+
+    {% for makine in makineler %}
+
+        {% include "blog/partials/_makine.html" %}
+
+
+
+    
+    {% endfor %}
+
+
+    
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+{% endblock content %}
+
+
+{% block js_files %}
+
+    <script src="{% static 'blog/js/script.js' %}"></script>
+
+{% endblock js_files %}

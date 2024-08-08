@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'account/css/index.css' %}"> 
+{% endblock css_files %}
+
+
+{% block title %} Üye ol {% endblock title %}
+
+
+
+
+{% block content %}
+
+    <div class="container mt-3">
+        <div class="col">
+            <h1>Üye Ol</h1>
+            <hr>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                {% if error %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
+                {% else %}
+                {% endif %}
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="username">Kullanıcı Adı</label>
+                        <input type="text" class="form-control" name="username" value="{{username}}">
+                    </div>
+
+                    <div class="col">
+                        <label for="email">Mail</label>
+                        <input type="email" class="form-control" name="email" value="{{email}}">
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="firstname">Ad</label>
+                        <input type="text" class="form-control" name="firstname" value="{{firstname}}">
+                    </div>
+                    <div class="col">
+                        <label for="lastname">Soyad</label>
+                        <input type="text" class="form-control" name="lastname" value="{{lastname}}">
+                    </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="password">Şifre</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <div class="col">
+                        <label for="repassword">Şifre(tekrar)</label>
+                        <input type="password" class="form-control" name="repassword">
+                    </div>
+
+                </div>
+
+                <input type="submit" value="Register" class="btn btn-primary">
+
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block js_files %}
+
+    <script src="{% static 'account/js/script.js' %}"></script>
+
+{% endblock js_files %}

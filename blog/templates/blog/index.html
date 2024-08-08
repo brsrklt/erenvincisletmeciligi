@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'blog/css/index.css' %}"> 
+{% endblock css_files %}
+
+
+{% block title %} Anasayfa {% endblock title %}
+
+
+
+
+{% block content %}
+
+
+    <div class="category">
+
+        <nav>
+            <ul class="estetik-liste">
+                
+                {% include "partials/_categories.html" %}
+                
+            </ul>
+
+            
+        </nav>
+
+
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+
+        {% for blog in blogs %}
+
+            {% include "blog/partials/_blog.html" %}
+        
+        {% endfor %}
+
+        </div>
+    </div>
+
+    
+
+
+
+    
+
+
+{% endblock content %}
+
+
+{% block js_files %}
+
+    <script src="{% static 'blog/js/script.js' %}"></script>
+
+{% endblock js_files %}

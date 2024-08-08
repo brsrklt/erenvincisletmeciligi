@@ -1,0 +1,30 @@
+
+
+
+
+
+
+            {% for category in categories %}
+
+                {% if category.slug == selected_category %}
+
+                    <li>
+                        <a href="{% url 'blogs_by_category' category.slug %}" class="active">
+                            {{category.name|title}}
+                        </a>
+                    </li>
+
+                {% else %}
+                    <li>
+                        <a href="{% url 'blogs_by_category' category.slug %}">
+                            {{category.name|title}}
+                        </a>
+                    </li>
+
+                {% endif %}  
+
+            {% endfor %}
+
+
+    
+

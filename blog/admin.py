@@ -13,9 +13,10 @@ class MakinelerimizAdmin(admin.ModelAdmin):
 admin.site.register(Makinelerimiz, MakinelerimizAdmin)
 
 
-class HakkimizdaAdmin(admin.ModelAdmin):
-    list_display = ("title",)  
+# class HakkimizdaAdmin(admin.ModelAdmin):
+#     list_display = ("title",)  
 
+admin.site.register(Hakkimizda)
 
 
 class IletisimAdmin(admin.ModelAdmin):
